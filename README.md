@@ -3,26 +3,26 @@ javascript-blowfish
 
 Blowfish encryption library Javascript, jquery,coffeescript (blowfish.js)
 
-Blowfish is block cipher, block length is *8 byte*.
+Blowfish is block cipher, block length is _8 byte_.
 
-If you want to encrypt binary data, you must provide
+If you want to encrypt _binary data_, you must provide
 encrypt function with string length multiple by 8.
 
-Example:
-Input string for encryption: "asdf" (4 bytes) is not enough for Blowfish,
+_Example:_
+
+Input string for encryption: `"asdf"` (4 bytes) is not enough for Blowfish,
 it want 8 byte string (or 16, 24, 32,...)
 
-So my lib automaticaly pad string with zeros: "asdf\0\0\0\0"
+So my lib automaticaly pad string with zeros: `"asdf\0\0\0\0"`
 
-When decrypt:
-after decryption we get not "asdf", but "asdf\0\0\0\0" string.
+After decryption we get not `"asdf"`, but `"asdf\0\0\0\0"` string.
 
-It you want to encrypt string information (like message, or json):
-use *trimZeroes* method (se bellow in Example 1).
+It you want to encrypt _string information_ (like message, or json):
+use _trimZeroes_ method (see bellow Example 1).
 
 Usage example:
 
-*Example 1*: ECB mode, default
+### Example 1: ECB mode, default
 
     var bf = new Blowfish("secret key");
     var encrypted = bf.encrypt("secret message");
@@ -31,7 +31,8 @@ Usage example:
     console.log(decrypted);
 
 
-*Example 2*: CBC mode (better for encrypting long messages and images).
+### Example 2: CBC mode (better for encrypting long messages and images).
+
 For CBC you need additional key (CBC Vector) which length should be 8 bytes.
 
     var bf = new Blowfish("key", "cbc");
@@ -42,7 +43,7 @@ Blowfish when encrypt produces binary string as result.
 It's not usable for example, to copy paste. We could encode it
 to base64 text format:
 
-*Example 3*: 
+### Example 3: with base64 encoded output
 
     var bf = new Blowfish("key");
     
