@@ -3,11 +3,11 @@ javascript-blowfish
 
 Blowfish encryption library Javascript, jquery,coffeescript (blowfish.js)
 
-Blowfish is block cipher, block length is _8 byte_.
+Blowfish is block cipher, block length is **8 byte**.
 
 ### Text data encryption (ASCII/text)
 
-It you want to encrypt _string information_ (like text-message, or json, xml):
+It you want to encrypt **string information** (like text-message, or json, xml):
 use _trimZeroes_ method (see bellow Example 1).
 
 #### Example: ECB mode, default
@@ -22,7 +22,7 @@ console.log(decrypted);
 
 ### Binary data encryption 
 
-If you want to encrypt _binary data_, you must provide
+If you want to encrypt **binary data** you must provide
 encrypt function with string length multiple by 8.
 
 **Example:**
