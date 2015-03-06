@@ -5,6 +5,8 @@ Blowfish encryption library Javascript, jquery,coffeescript (blowfish.js)
 
 Blowfish is block cipher, block length is **8 byte**.
 
+Online [DEMO of javascript-blowfish](http://plnkr.co/edit/CbOyJKaRcspIAokgiomT?p=preview).
+
 ### Text data encryption (ASCII/text)
 
 It you want to encrypt **string information** (like text-message, or json, xml):
@@ -33,7 +35,7 @@ Blowfish want 8-byte string (or 16, 24, 32,...)
 So my lib automaticaly pad string with zeros: `"asdf\0\0\0\0"`
 If you want to prevent such behaviour you should pad input data to block size.
 
-Additional info about padding: [Using Padding in Encryption](http://www.di-mgt.com.au/cryptopad.html) (@lucnap suggested)
+Additional info about padding: [Using Padding in Encryption](http://www.di-mgt.com.au/cryptopad.html) (@lucnap) suggested
 
 After decryption we will get not `"asdf"`, but `"asdf\0\0\0\0"` string.
 
