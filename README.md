@@ -7,6 +7,8 @@ Blowfish is block cipher, block length is **8 byte**.
 
 Online [DEMO of javascript-blowfish](http://plnkr.co/edit/CbOyJKaRcspIAokgiomT?p=preview).
 
+A key advantage of the library is that it **works correctly with strings in UTF-8**.
+
 ### Text data encryption (ASCII/text)
 
 It you want to encrypt **string information** (like text-message, or json, xml):
