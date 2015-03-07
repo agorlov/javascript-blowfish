@@ -5,14 +5,21 @@ Blowfish encryption library Javascript, jquery,coffeescript (blowfish.js)
 
 Blowfish is block cipher, block length is **8 byte**.
 
-Online [DEMO of javascript-blowfish](http://plnkr.co/edit/CbOyJKaRcspIAokgiomT?p=preview).
+Online [DEMO of javascript-blowfish](http://plnkr.co/edit/wqo56T).
 
 A key advantage of the library is that it **works correctly with strings in UTF-8**.
+
+### _trimZeros_ method no more required for new encrypted data
+
+The padding method has been changed. Now the algorithm pad with 0x80 followed by zero bytes (OneAndZeroes Padding)
+The padding data is automatically stripped off when decrypting so you "do not" need to use _trimZeros_ on decrypted data
+Use _trimZeros only to decrypt previously encrypted data before this change.
+
 
 ### Text data encryption (ASCII/text)
 
 It you want to encrypt **string information** (like text-message, or json, xml):
-use _trimZeroes_ method (see bellow Example 1).
+use _trimZeros_ method (see bellow Example 1).
 
 #### Example: ECB mode, default
 
@@ -20,7 +27,7 @@ use _trimZeroes_ method (see bellow Example 1).
 var bf = new Blowfish("secret key");
 var encrypted = bf.encrypt("secret message");
 var decrypted = bf.decrypt(encrypted);
-decrypted = bf.trimZeroes(decrypted); // for string/text information 
+decrypted = bf.trimZeros(decrypted); // for string/text information 
 console.log(decrypted);
 ```
 
