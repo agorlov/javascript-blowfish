@@ -11,7 +11,7 @@ A key advantage of the library is that it **works correctly with strings in UTF-
 
 ### _trimZeros()_ method no more required for new encrypted data
 
-The padding method has been changed. Now the algorithm pad with 0x80 followed by zero bytes (OneAndZeroes Padding). 
+The padding method has been changed. Now the algorithm pad with 0x80 followed by 0x00 bytes (OneAndZeroes Padding). 
 The padding data is automatically stripped off when decrypting so you "do not" need to use _trimZeros()_ on decrypted data. 
 Use _trimZeros()_ only to decrypt previously encrypted data before this change.
 
