@@ -181,7 +181,7 @@ Blowfish.prototype = {
         var count = 8 - block.length - 1;
         block += "\x80";
         while (0 < count--) {
-          block += "0";
+          block += "\x00";
         }
       }
 
@@ -231,7 +231,7 @@ Blowfish.prototype = {
         var count = 8 - block.length - 1;
         block += "\x80";
         while (0 < count--) {
-          block += "0";
+          block += "\x00";
         }
       }
 
@@ -285,7 +285,7 @@ Blowfish.prototype = {
       decryptedBlock = this.num2block32(xL) + this.num2block32(xR);
       // if this is the last block, strip off all trailing zero char and the 0x80 byte.
       if (i === blocks - 1) {
-        decryptedBlock = decryptedBlock.replace(/(\x80)(0*)$/g, "");
+        decryptedBlock = decryptedBlock.replace(/(\x80)(\x00*)$/g, "");
       }
       decryptedString += decryptedBlock;
 
@@ -341,7 +341,7 @@ Blowfish.prototype = {
       decryptedBlock = this.num2block32(xL) + this.num2block32(xR);
       // if this is the last block, strip off all trailing zero char and the 0x80 byte.
       if (i === blocks - 1) {
-        decryptedBlock = decryptedBlock.replace(/(\x80)(0*)$/g, "");
+        decryptedBlock = decryptedBlock.replace(/(\x80)(\x00*)$/g, "");
       }
       decryptedString += decryptedBlock;
 
