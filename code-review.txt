@@ -1,9 +1,3 @@
-Padding method changed 2015-03-07 (@lucnap)
-  Coffee script not changed, only Blowfish.js and jquery.blowfish.js (do not know coffeescript)
-+ pad with 0x80 followed by zero bytes (OneAndZeroes Padding) See http://www.di-mgt.com.au/cryptopad.html
-- trimZeros function not more needed but not removed because useful in backward compatibility with 
-  old encrypted data
-
 Форматирование
  + большинство кода соответсвует
  - лучше использовать упрощенные конструкции условий с выходом (см. encrypt и decrypt)
