@@ -179,10 +179,12 @@
       for (var i = 0; i < blocks; i++) {
         var block = string.substr(i * 8, 8);
         if (block.length < 8) {
-          var count = 8 - block.length;
-          while (0 < count--) {
-            block += "\0";
-          }
+            // Pad with hex 0x80 followed by zeroes
+            var count = 8 - block.length - 1;
+            block += "\x80";
+            while (0 < count--) {
+              block += "0";
+            }
         }
 
         var xL, xR;
@@ -227,10 +229,12 @@
       for (var i = 0; i < blocks; i++) {
         var block = string.substr(i * 8, 8);
         if (block.length < 8) {
-          var count = 8 - block.length;
-          while (0 < count--) {
-            block += "\0";
-          }
+            // Pad with hex 0x80 followed by zeroes
+            var count = 8 - block.length - 1;
+            block += "\x80";
+            while (0 < count--) {
+              block += "0";
+            }
         }
 
         var xL, xR, xLxR;
@@ -279,7 +283,14 @@
         xL = xLxR[0];
         xR = xLxR[1];
 
-        decryptedString += this.num2block32(xL) + this.num2block32(xR);
+        var decryptedBlock;
+        decryptedBlock = this.num2block32(xL) + this.num2block32(xR);
+        // if this is the last block, strip off all trailing zero char and the 0x80 byte.
+        if (i === blocks - 1) {
+          decryptedBlock = decryptedBlock.replace(/(\x80)(0*)$/g, "");
+        }
+        decryptedString += decryptedBlock;
+
       }
 
       decryptedString = this.utf8Encode(decryptedString);
@@ -327,8 +338,16 @@
 
         ivL = ivLtmp;
         ivR = ivRtmp;
-        decryptedString += this.num2block32(xL) + this.num2block32(xR);
-      }
+        
+        var decryptedBlock;
+        decryptedBlock = this.num2block32(xL) + this.num2block32(xR);
+        // if this is the last block, strip off all trailing zero char and the 0x80 byte.
+        if (i === blocks - 1) {
+          decryptedBlock = decryptedBlock.replace(/(\x80)(0*)$/g, "");
+        }
+        decryptedString += decryptedBlock;
+
+        }
 
       decryptedString = this.utf8Encode(decryptedString);
       return decryptedString;
@@ -709,11 +728,14 @@
       return output;
     },
 
-    /**
-     * Удаляет символы \0 в конце строки
-     * @param {string} input
-     * @return {string}
-     */
+  /**
+   * Удаляет символы \0 в конце строки
+   * It is no more required encripting new data because now the blocks are padded
+   * with 0x80 followed by zero bytes (OneAndZeroes Padding) (See http://www.di-mgt.com.au/cryptopad.html)
+   * The function is necesary to decript data encrypted before 2015-03-07
+   * @param {string} input
+   * @return {string}
+   */
     trimZeros: function(input) {
       return input.replace(/\0+$/g, "");
     }
