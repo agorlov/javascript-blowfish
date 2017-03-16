@@ -1,6 +1,6 @@
 {
 	"name": "javascript-blowfish",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Blowfish encryption library Javascript, jquery,coffeescript (blowfish.js)",
 	"main": "Blowfish.js",
 	"scripts": {
@@ -20,7 +20,7 @@
 		"decypher",
 		"javascript"
 	],
-	"author": "AGorolov",
+	"author": "Artyom Egorov",
 	"license": "MIT",
 	"bugs": {
 		"url": "https://github.com/agorlov/javascript-blowfish/issues"
