@@ -21,7 +21,7 @@
 		"decypher",
 		"javascript"
 	],
-	"author": "Artyom Egorov",
+	"author": "agorlov",
 	"license": "MIT",
 	"bugs": {
 		"url": "https://github.com/agorlov/javascript-blowfish/issues"
