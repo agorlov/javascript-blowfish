@@ -1,6 +1,6 @@
 {
 	"name": "javascript-blowfish",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"description": "Blowfish encryption library Javascript, jquery,coffeescript (blowfish.js)",
 	"main": "Blowfish.js",
 	"types": "Blowfish.d.ts",
