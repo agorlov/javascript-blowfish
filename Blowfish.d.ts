@@ -1,7 +1,3 @@
-declare module "Blowfish" {
-	export = Blowfish;
-}
-
 /**
  * @class Blowfish
  * @description
@@ -49,7 +45,7 @@ declare module "Blowfish" {
  * @param {string} [mode] режим шифрования
  * @author Alexandr Gorlov <a.gorlov@gmail.com>
  */
-declare class Blowfish {
+export declare class Blowfish {
 
 	/**
 	 *
