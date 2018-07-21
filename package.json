@@ -1,9 +1,9 @@
 {
 	"name": "javascript-blowfish",
-	"version": "1.0.4",
+	"version": "1.0.5",
 	"description": "Blowfish encryption library Javascript, jquery,coffeescript (blowfish.js)",
-	"main": "Blowfish.js",
-	"types": "Blowfish.d.ts",
+	"main": "Blowfish.node.js",
+	"types": "Blowfish.node.d.ts",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},

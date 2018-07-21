@@ -26,6 +26,8 @@
  * @class Blowfish
  * @description
  * Шифратор/дешифратор. Алгоритм Blowfish
+ * 
+ * Browser version. For node use Blowfish.node.js
  *
  * в режиме ecb: исходная строка разбивается на 8-байтные блоки, каждый блок
  *   шифруется. Если размер блока менее 8 байт, то дополняем его до 8 байт нулями.
@@ -951,5 +953,3 @@ Blowfish.sBox3 = [
   0x01c36ae4, 0xd6ebe1f9, 0x90d4f869, 0xa65cdea0, 0x3f09252d, 0xc208e69f,
   0xb74e6132, 0xce77e25b, 0x578fdfe3, 0x3ac372e6
 ];
-
-exports.Blowfish = Blowfish;
