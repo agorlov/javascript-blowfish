@@ -1,0 +1,30 @@
+{
+	"name": "javascript-blowfish",
+	"version": "1.0.4",
+	"description": "Blowfish encryption library Javascript, jquery,coffeescript (blowfish.js)",
+	"main": "Blowfish.js",
+	"types": "Blowfish.d.ts",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/agorlov/javascript-blowfish.git"
+	},
+	"keywords": [
+		"node",
+		"js",
+		"blowfish",
+		"encryption",
+		"decryption",
+		"encypher",
+		"decypher",
+		"javascript"
+	],
+	"author": "agorlov",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/agorlov/javascript-blowfish/issues"
+	},
+	"homepage": "https://github.com/agorlov/javascript-blowfish#readme"
+}
