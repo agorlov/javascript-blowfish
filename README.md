@@ -73,3 +73,39 @@ console.log(encrypted);
 var encrypted = bf.base64Decode(encrypted);
 var decrypted = bf.decrypt(encrypted);
 ```
+
+
+### Node.js and npm version
+
+**Upd:** 21.07.2018
+
+Installation:
+
+```bash
+$ npm install agorlov/javascript-blowfish
+```
+
+Usage example:
+
+```javascript
+const Blowfish = require('javascript-blowfish');
+
+const key = "secret key";
+const bf = new Blowfish(key);
+
+console.log("Blowfish encrypt text by key: " + key);
+
+// Encryption
+const encrypted = bf.encrypt("Secret message. Confidentially!");
+let encryptedMime = bf.base64Encode(encrypted);
+console.log(encryptedMime);
+
+// Decryption
+console.log(
+    'decrypted: ',
+    bf.decrypt(
+        bf.base64Decode(encryptedMime)
+    )
+);
+
+```
