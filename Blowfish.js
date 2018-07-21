@@ -266,9 +266,10 @@ Blowfish.prototype = {
       xLxR = this.encipher(xL, xR);
       xL = xLxR[0];
       xR = xLxR[1];
-//      ivL = xL; - не используется
-//      ivR = xR; - не используется
-      //[ivL, ivR] = [xL, xR];
+
+      ivL = xL;
+      ivR = xR;
+
       encryptedString += this.num2block32(xL) + this.num2block32(xR);
     }
 
