@@ -12,7 +12,7 @@ A key advantage of the library is that it **works correctly with strings in UTF-
 ### Text data encryption (ASCII/text)
 
 It you want to encrypt **string information** (like text-message, or json, xml):
-use _trimZeroes_ method (see bellow Example 1).
+use _trimZeros_ method (see bellow Example 1).
 
 #### Example: ECB mode, default
 
@@ -20,7 +20,7 @@ use _trimZeroes_ method (see bellow Example 1).
 var bf = new Blowfish("secret key");
 var encrypted = bf.encrypt("secret message");
 var decrypted = bf.decrypt(encrypted);
-decrypted = bf.trimZeroes(decrypted); // for string/text information 
+decrypted = bf.trimZeros(decrypted); // for string/text information 
 console.log(decrypted);
 ```
 
