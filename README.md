@@ -3,6 +3,8 @@ javascript-blowfish
 
 Blowfish encryption library Javascript, jquery,coffeescript (blowfish.js)
 
+Works well both in old and new browsers.
+
 Blowfish is block cipher, block length is **8 byte**.
 
 Online [DEMO of javascript-blowfish](http://plnkr.co/edit/CbOyJKaRcspIAokgiomT?p=preview).
